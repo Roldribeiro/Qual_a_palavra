@@ -1,0 +1,270 @@
+/* Estilos gerais */
+body {
+    font-family: Verdana, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    max-height: 600px;
+    padding: 0 5%;
+    box-sizing: border-box;
+}
+
+#progresso {
+    padding: 1px 0;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+#tentativas{
+    display:none;
+}
+
+#palavra-atual {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: start;
+    background-color: #f9f9f9;
+    border-top: 1px solid #ccc;
+    padding: 10px;
+    font-size: 0.9em;
+    z-index: 1000;
+    display: none;
+}
+
+header {
+    width:max-content;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    
+   
+}
+
+header h1 {
+    font-size: 1.5em;
+    padding: 10px;
+    border: #19191a;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #efeff0;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content, .side-content {
+    padding: 10px;
+    border: 1px solid #919191;
+    border-radius: 10px;
+    background-color: #d6e0e9;
+    margin-bottom: 10px;
+}
+
+.main-content {
+    width: 100%;
+    line-height: 1.5;
+}
+
+.side-content {
+    width: 100%;
+}
+
+.side-content h3, .side-content h4 {
+    margin-top: 0;
+    font-size: 12px;
+}
+
+#lista-ranking {
+    font-size: 0.8em;
+    max-height: 120px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+#selecionar-categoria{
+    width: 70%;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: 1px solid #919191;
+    border-radius: 5px;
+    font-size: 12px;
+    cursor: pointer;
+    background-color: #e9ecef;
+}
+
+#iniciar-jogo{
+    margin-top: 10px;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    font-size: 12px;
+    cursor: pointer;
+    border: 1px solid #919191;
+}
+button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    font-size: 12px;
+    cursor: pointer;
+    
+}
+
+button:hover {
+    background-color: #0056b3;
+    
+}
+
+input[type="text"], select {
+    width: 50%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #919191;
+    border-radius: 5px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background-color: #e9ecef;
+    margin-bottom: 5px;
+    padding: 10px;
+    border-radius: 5px;
+}
+#nova-palavra{
+    display: none;
+}
+#letras-erradas {
+    color: rgb(187, 11, 46);
+    font-size: 1em;
+}
+
+#nome-vencedor, #nome-vencedor-popup {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Estilo do popup */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.popup-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilo para diminuir o tamanho do placeholder */
+input[type="text"]::placeholder,
+#nome-vencedor::placeholder,
+#nome-vencedor-popup::placeholder {
+    font-size: 0.8em; /* Ajuste o tamanho conforme necessário */
+    color: #999;
+    
+}
+
+/* Estilo para diminuir o tamanho do campo de inserção de letra */
+#letra-input {
+    font-size: 0.8em; /* Ajuste o tamanho conforme necessário */
+    padding: 5px; /* Reduz o padding para melhor uso do espaço */
+    width: 50px; /* Ajuste a largura conforme necessário */
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+
+    .main-content, .side-content {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .side-content {
+        order: 2;
+    }
+
+    .main-content {
+        order: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.3em;
+    }
+
+    .side-content, .main-content {
+        padding: 5px;
+    }
+
+    footer {
+        font-size: 12px;
+    }
+}
+#letras-erradas {
+    color: #333; /* Cor padrão para "Letras erradas" */
+    font-size: 1em;
+}
+
+.letra-errada {
+    color: rgb(187, 11, 46); /* Cor vermelha para letras erradas */
+}
