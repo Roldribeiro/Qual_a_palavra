@@ -61,6 +61,19 @@ header h1 {
     background-color: #007bff;
     color: #efeff0;
 }
+#copy{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #d6e0e9;
+    border-top: 1px solid #ccc;
+    padding: 10px;
+    font-size: 1em;
+    z-index: 1000;
+    font-family: 'Courier New', Courier, monospace;
+
+}
 
 .content {
     display: flex;
